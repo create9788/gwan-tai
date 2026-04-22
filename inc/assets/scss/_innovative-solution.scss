@@ -1,0 +1,156 @@
+// ==========================================
+// Table of Contents
+// ==========================================
+// 1. Solution Section
+//    1.1 Headings
+//    1.2 Features Wrapper & Feature Items
+//    1.3 Grid Icon
+//    1.4 Features Wrapper 2 (Alternate Style)
+// 2. Solution Green BG (Background Variant)
+// ==========================================
+
+.solution-section {
+    padding: 15rem 0 20rem 0;
+    background: radial-gradient(circle at bottom left, var(--primary-color) 0, var(--main-secondary-color) 30%);
+    position: relative;
+    clip-path: var(--slope-clip-top-left-5);
+    [dir='rtl'] & {
+        clip-path: var(--slope-clip-top-right-5);
+    }
+    @media (max-width: 991px) {
+        padding: 10rem 0;
+    }
+    @media (max-width: 767px) {
+        padding: 5rem 0 10rem;
+    }
+
+    .sub-heading {
+        text-align: center;
+    }
+    .main-heading {
+        text-align: center;
+        color: var(--primary-white);
+        max-width: 55%;
+        margin-left: auto;
+        margin-right: auto;
+        @media (max-width: 1200px) {
+            max-width: 70%;
+        }
+        @media (max-width: 767px) {
+            max-width: 90%;
+        }
+    }
+    .features-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        @media (max-width: 991px) {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        .feature-item {
+            background-color: rgba(25, 25, 25, 0.3);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            clip-path: var(--slope-clip-top-right-3);
+            transition: all 0.3s ease-in-out;
+            [dir='rtl'] & {
+                clip-path: var(--slope-clip-top-left-3);
+            }
+            .feature-img {
+                height: 100%;
+                @media (max-width: 600px) {
+                    width: 100%;
+                }
+            }
+            img {
+                width: 209px;
+               height: 100%;
+                object-fit: cover;
+                @media (max-width: 600px) {
+                    width: 100%;
+                    height: 30rem;
+                }
+            }
+            .feature-content {
+                padding: 5rem 5rem 5rem 6rem;
+                .feature-title {
+                    display: flex;
+                    align-items: center;
+                    gap: 2rem;
+                    font-family: var(--jakarta-font-family);
+                    font-weight: 600;
+                    font-size: var(--feature-font-size);
+                    line-height: 1.2;
+                    color: var(--primary-white);
+                    transition: all 0.3s ease-in-out;
+                    .feature-icon {
+                        height: 3rem;
+                        width: 3rem;
+                        fill: var(--primary-color);
+                    }
+                }
+                p {
+                    color: var(--primary-white);
+                    margin-top: 3rem;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+            &:hover {
+                background-color: var(--primary-white);
+                .feature-content {
+                    .feature-title {
+                        color: var(--semi-black-color);
+                    }
+                    p {
+                        color: var(--grey-color);
+                    }
+                }
+            }
+            @media (max-width: 600px) {
+                flex-direction: column;
+                clip-path: polygon(90% 0, 100% 10%, 100% 100%, 0 100%, 0 0);
+            }
+        }
+    }
+    .grid-icon {
+        position: absolute;
+        width: 4.6rem;
+        height: 4.6rem;
+        stroke: var(--primary-color);
+        bottom: 50px;
+        right: 50px;
+        z-index: 10;
+        @media (max-width:991px) {
+            bottom: 20px;
+            right: 20px;
+        }
+        @media (max-width:767px) {
+         display: none;
+        }
+    }
+    .features-wrapper-2{
+       .feature-item{
+            background-color: var(--primary-white);
+            .feature-content {
+                .feature-title {
+                    color: var(--semi-black-color);
+                }
+                p {
+                    color: var(--grey-color);
+                }
+        }
+       } 
+    }
+}
+.solution-green-bg{
+    background: url(../../../inc/assets/images/services-bg-img-2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    .features-wrapper{
+        .feature-item{
+            background-color: rgba(25, 25, 25, 0.5);
+        }
+    }
+}

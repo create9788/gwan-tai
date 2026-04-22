@@ -1,0 +1,192 @@
+// =====================
+// Table of Contents:
+// =====================
+// 1. Commitment Section Layout
+// 2. Commitment Item Styles
+// 3. Dark Commitment Item Variant
+// 4. Commitment Grid 4 Column Variant
+// ====================
+
+.commitment-section {
+    padding: 15rem 0 12rem;
+    @media (max-width: 991px) {
+        padding: 10rem 0;
+    }
+    @media (max-width: 991px) {
+        padding: 5rem 0;
+    }
+    .sub-heading {
+        text-align: center;
+    }
+    .main-heading {
+        text-align: center;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        @media (max-width: 767px) {
+            max-width: 100%;
+        }
+    }
+    .commitment-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5rem;
+        padding-top: 5rem;
+        @media (max-width: 991px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: 767px) {
+            grid-template-columns: 1fr;
+            padding-top: 2rem;
+        }
+    }
+    .commitment-detail-block {
+        display: flex;
+        column-gap: 7rem;
+        row-gap: 5rem;
+        @media (max-width: 991px) {
+            flex-direction: column;
+        }
+    }
+    &.padding-bottom-none {
+        padding-bottom: 0;
+    }
+}
+.commitment-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    @media (max-width: 480px) {
+        gap: 3rem;
+        text-align: center;
+    }
+    .commitment-title {
+        display: grid;
+        align-items: center;
+        grid-template-columns: auto 1fr;
+        gap: 2.8rem;
+        @media (max-width: 480px) {
+            grid-template-columns: 1fr;
+        }
+        .icon {
+            width: 91px;
+            height: 88px;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            clip-path: var(--slope-clip-top-right-base);
+            [dir='rtl'] & {
+                clip-path: var(--slope-clip-top-left-base);
+            }
+            svg {
+                fill: var(--primary-white);
+                height: 50px;
+                width: auto;
+            }
+            @media (max-width: 480px) {
+                margin: auto;
+            }
+        }
+        h3 {
+            font-family: var(--jakarta-font-family);
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 34px;
+            color: var(--secondary-color);
+            max-width: 90%;
+            @media (max-width: 1200px) {
+                max-width: 100%;
+            }
+        }
+    }
+    .read-more {
+        text-decoration: none;
+        font-family: var(--jakarta-font-family);
+        font-weight: 600;
+        font-size: var(--sm-font-size);
+        color: var(--primary-color);
+        line-height: 34px;
+        display: flex;
+        width: max-content;
+        padding-right: 1rem;
+        align-items: center;
+        position: relative;
+        overflow: hidden; /* Ensures animation stays within bounds */
+        transition: color 0.3s ease; /* Smooth transition for text color */
+    }
+
+    .read-more::before {
+        content: '';
+        width: 0;
+        height: 1.4px;
+        background-color: var(--primary-color);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+
+    .read-more:hover::before {
+        width: 100%;
+        opacity: 1;
+    }
+
+    .read-more svg {
+        height: 16px;
+        fill: var(--primary-color);
+        margin-left: 1rem;
+        transition:
+            transform 0.3s ease,
+            fill 0.3s ease; /* Smooth icon animation */
+            [dir='rtl'] & {
+                rotate: 180deg;
+            }
+    }
+
+    .read-more:hover svg {
+        transform: translateX(5px); /* Subtle movement of the icon */
+        [dir='rtl'] & {
+            transform: translateX(-5px);
+        }
+    }
+
+    /* Mobile-specific styling */
+    @media (max-width: 480px) {
+        .read-more {
+            margin: auto;
+        }
+    }
+}
+.commitment-item.dark-commitment-item{
+    .commitment-title .icon svg {
+        fill: var(--secondary-color);
+    }
+    .commitment-title h3{
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .read-more{
+        color: var(--secondary-color);
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        svg{
+            fill: var(--secondary-color);
+        }
+        &::before{
+            background-color: var(--secondary-color);
+        }
+    }
+}
+.commitment-grid-4-col{
+    grid-template-columns: 1fr 1fr 1fr 1fr!important;
+    gap: 5rem!important;
+    @media (max-width: 1500px) {
+        grid-template-columns: 1fr 1fr!important;
+    }
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr!important;
+    }
+}

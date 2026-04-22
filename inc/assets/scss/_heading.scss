@@ -1,0 +1,67 @@
+// =======================
+// Table of Contents
+// =======================
+// 1. Main Heading Styles
+// 2. Sub Heading Styles
+// 3. Outline Heading Styles
+// 4. Text Container Styles
+// 5. Paragraph Styles
+// =======================
+.main-heading {
+    font-family: var(--jakarta-font-family);
+    font-weight: 600;
+    font-size: var(--main-heading-font-size);
+    line-height: var(--heading-line-height);
+    color: var(--secondary-color);
+    margin-bottom: 5rem;
+  letter-spacing: var(--heading-letter-spacing);
+  text-transform: var(--heading-text-transform);
+    @media (max-width: 991px) {
+        font-size: 5rem;
+        margin-bottom: 3rem;
+        letter-spacing: 0;
+    }
+}
+.sub-heading {
+    font-size: var(--sub-heading-font-size);
+    font-family: var(--jakarta-font-family);
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 1.6px;
+    margin-bottom: 1rem;
+   
+}
+.outline-heading {
+    display: inline-block;
+    font-size: var(--outline-heading-font-size);
+    font-family: var(--jakarta-font-family);
+    font-weight: 600;
+    text-transform: uppercase;
+    user-select: none;
+    color: var(--page-bg-color);
+    text-shadow:
+        -1px -1px 0 var(--moving-text-color),
+        1px -1px 0 var(--moving-text-color),
+        -1px 1px 0 var(--moving-text-color),
+        1px 1px 0 var(--moving-text-color);
+    margin-left: 5rem;
+    @media (max-width: 991px) {
+        font-size: 12rem;
+    }
+    @media (max-width: 767px) {
+        font-size: 9rem;
+    }
+}
+.text-container {
+    white-space: nowrap;
+    position: relative;
+}
+p {
+    color: var(--paragraph-color);
+    font-family: var(--jakarta-font-family);
+    font-weight: 400;
+    font-size: var(--paragraph-font-size);
+    line-height: 34px;
+}

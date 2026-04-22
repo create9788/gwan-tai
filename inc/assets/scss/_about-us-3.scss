@@ -1,0 +1,340 @@
+// =====================
+// Table of Contents:
+// =====================
+// 1. About Us Section Main Wrapper
+// 2. About Image Block & Banner
+// 3. About Text Block
+// 4. About Us Comment
+// 5. About Video Box
+// 6. About Image Blue Variant
+// 7. Modal Styles
+// 8. Dark Theme Modifiers
+// 9. Utility Color Classes
+// ======================
+
+// About-section-css
+.about-us-3-main-wrapper{
+.about-us-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    clip-path: var(--slope-clip-top-right-5);
+    [dir='rtl'] &{
+        clip-path: var(--slope-clip-top-left-5);
+    }
+    @media (max-width: 991px) {
+        grid-template-columns: 1fr;
+    }
+    .about-img-block {
+        background: url(../../../inc/assets/images/about-us-img.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        @media (max-width: 991px) {
+            min-height: 50rem;
+        }
+        .about-banner {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 2.8rem;
+            max-width: 660px;
+            height: 167px;
+            background-color: var(--primary-white);
+            clip-path: var(--slope-clip-bottom-left-3);
+            padding: 2.4rem 2.4rem 2.4rem 5rem;
+            position: absolute;
+            right: 0;
+            bottom: 10rem;
+            margin-left: 2rem;
+            [dir='rtl'] &{
+                clip-path: var(--slope-clip-bottom-right-3);
+            }
+            @media (max-width: 1200px) {
+                height: 124px;
+            }
+            @media (max-width: 991px) {
+                height: 102px;
+                bottom: 5rem;
+            }
+            @media (max-width: 767px) {
+                height: 82px;
+                bottom: 5rem;
+            }
+            img {
+                height: auto;
+                width: 60px;
+                fill: var(--main-orange);
+                @media (max-width: 991px) {
+                    height: auto;
+                    width: 40px;
+                }
+                @media (max-width: 767px) {
+                    height: auto;
+                    width: 30px;
+                }
+            }
+            .banner-inner-text {
+                font-size: var(--title-font-size);
+                font-family: var(--jakarta-font-family);
+                color: var(--secondary-color);
+                font-weight: 600;
+                line-height: 1.294;
+                width: 70%;
+                @media (max-width: 991px) {
+                    font-size: 2.8rem;
+                    width: 50%;
+                }
+                @media (max-width: 767px) {
+                    font-size: 1.8rem;
+                    width: 60%;
+                }
+            }
+        }
+    }
+
+    .about-text-block {
+        background:
+            url(../../../inc/assets/images/services-bg-img-1.png) center / 100% auto no-repeat;
+        padding: 10rem 0;
+        background-size: cover;
+        color: var(--primary-white);
+        position: relative;
+        @media (max-width: 991px) {
+            padding: 7rem 0;
+        }
+        @media (max-width: 767px) {
+            padding: 5rem 0;
+        }
+        .sub-heading {
+            padding-left: 10rem;
+            @media (max-width: 1200px) {
+                padding-left: 9.2rem;
+            }
+            @media (max-width: 767px) {
+                padding-left: 3.2rem;
+            }
+        }
+   
+        .main-heading {
+            color: var(--primary-white);
+            padding-left: 10rem;
+            text-align: left;
+            margin-bottom: 3rem;
+            @media (max-width: 1200px) {
+                padding-left: 9.2rem;
+            }
+            @media (max-width: 767px) {
+                padding-left: 3.2rem;
+            }
+        }
+
+        .about-us-comment {
+            background-color: var(--transparent-primary-color);
+            max-width: 660px;
+            clip-path: var(--slope-clip-top-right-3);
+            padding: 10rem 9rem 10rem 10.2rem;
+            [dir='rtl'] &{
+                clip-path: var(--slope-clip-top-left-3);
+            }
+            @media (max-width: 1200px) {
+                padding: 4.6rem 9.2rem;
+            }
+            @media (max-width: 767px) {
+                padding: 2.6rem 3.2rem;
+            }
+            .comment {
+                font-size: var(--medium-font-size);
+                font-family: var(--jakarta-font-family);
+                color: var(--primary-white);
+                font-weight: 400;
+                line-height: 40px;
+                @media (max-width: 767px) {
+                    font-size: var(--paragraph-font-size);
+                    line-height: 30px;
+                }
+            }
+            .comment:first-child {
+                margin-bottom: 5rem;
+                @media (max-width: 991px) {
+                    margin-bottom: 3rem;
+                }
+                @media (max-width: 767px) {
+                    margin-bottom: 0;
+                }
+            }
+            .about-name {
+                font-size: var(--paragraph-font-size);
+                margin-top: 3.8rem;
+                color: var(--primary-color);
+                @media (max-width: 991px) {
+                    margin-top: 2rem;
+                }
+            }
+            &.primary-bg{
+            background-color: var(--primary-color)!important;
+        }
+        }
+        
+        .about-video-box {
+            display: flex;
+            align-items: center;
+            gap: 2.4rem;
+            padding-left: 10.2rem;
+            margin-top: 3rem;
+            @media (max-width: 1200px) {
+                padding-left: 9.2rem;
+            }
+            @media (max-width: 767px) {
+                padding-left: 3.2rem;
+            }
+            .video-block:link,
+            .video-block:visited {
+                position: relative;
+                text-decoration: none;
+                .video-img {
+                    clip-path: var(--slope-clip-top-right-3);
+                    width: 219px;
+                    height: 137px;
+                    // background-color: var(--primary-color);
+                    [dir='rtl'] &{
+                        clip-path: var(--slope-clip-top-left-3);
+                    }
+                    @media (max-width: 767px) {
+                        width: 168px;
+                        height: 112px;
+                    }
+                }
+                .video-play-icon {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    height: 70px;
+                    width: 70px;
+                    fill: var(--primary-color);
+                    opacity: 1;
+                    background-color: var(--primary-white);
+                    border-radius: 50%;
+                    padding: 1rem;
+                    @media (max-width: 767px) {
+                        height: 60px;
+                        width: 60px;
+                    }
+                }
+            }
+           
+
+            .video-text-box {
+                width: 42%;
+                @media (min-width: 1800px) {
+                    width: 27%;
+                }
+                .video-title {
+                    font-family: var(--jakarta-font-family);
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 1.25;
+                    @media (max-width: 767px) {
+                        font-size: var(--paragraph-font-size);
+                    }
+                }
+                .watch-video {
+                    font-size: var(--btn-font-size);
+                    font-family: var(--jakarta-font-family);
+                    color: var(--light-primary-color);
+                    font-weight: bold;
+                    line-height: 1.25;
+                    text-transform: uppercase;
+                    margin-top: 3.2rem;
+                    letter-spacing: 1.5px;
+                }
+            }
+        }
+        .grid-icon {
+            position: absolute;
+            width: 4.6rem;
+            height: 4.6rem;
+            stroke: var(--primary-white);
+            bottom: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+    }
+    .about-img-blue{
+        background:url(/inc/assets/images-2/services-bg-img-1.png) bottom right / 100% auto no-repeat;
+        background-size: cover;
+        background-repeat: no-repeat;
+        // background-position: ;
+    }
+
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-black-transparent); /* Black background with opacity */
+    .modal-content {
+    position: relative;
+    margin: 15% auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 700px;
+    iframe {
+        width: 100%;
+        border: none;
+    }
+}
+.close-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    height: 28px;
+    width: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--primary-white);
+    border-radius: 50%;
+}
+}
+&.about-dark-theme{
+    .about-us-section .about-img-block .about-banner .banner-inner-text{
+        font-size: 2.4rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        @media (max-width: 991px) {
+            font-size: 2.4rem;
+            width: 50%;
+        }
+        @media (max-width: 767px) {
+            font-size: 1.8rem;
+            width: 60%;
+        }
+    }
+    .about-us-section .about-text-block .about-us-comment .comment{
+        color: var(--secondary-color);
+    }
+    .about-us-section .about-text-block .about-video-box .video-text-box .video-title{
+        color: var(--page-bg-color);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .about-us-section .about-text-block .about-us-comment .about-name{
+        font-weight: 600;
+        font-size: 1.6rem;
+    }
+}
+}
+// About-section-css
+.color-light{
+    color: var(--light-primary-color)!important;
+}
+.color-dark{
+    color: var(--paragraph-color)!important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}

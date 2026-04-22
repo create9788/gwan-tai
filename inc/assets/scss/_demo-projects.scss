@@ -1,0 +1,210 @@
+// ===================
+// Table of Contents:
+// 1. .demo-projects-section - Main section styles
+// 2. .grid-icon - Decorative grid icon
+// 3. .heading-wrapper - Heading and slider buttons
+// 4. .swiper - Swiper container and slides
+// 5. .project-card - Project card styles
+// 6. .swiper-button-disabled - Disabled slider button
+// =====================
+.demo-projects-section {
+    padding: 15rem 0 20rem 0;
+    background: radial-gradient(circle at bottom left, var(--primary-color) 0, var(--secondary-color) 30%);
+    position: relative;
+    clip-path: var(--slope-clip-top-left-5);
+    .grid-icon {
+        position: absolute;
+        width: 4.6rem;
+        height: 4.6rem;
+        stroke: var(--primary-color);
+        bottom: 50px;
+        left: 50px;
+        z-index: 10;
+        @media (max-width: 991px) {
+            display: none;
+        }
+    }
+    .heading-wrapper {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        margin-bottom: 5rem;
+        .main-heading {
+            color: var(--primary-white);
+            max-width: 76%;
+            margin-bottom: 0;
+            @media (max-width: 991px) {
+                max-width: 65%;
+            }
+            @media (max-width: 767px) {
+                max-width: 100%;
+            }
+        }
+        .project-slider-btns {
+            display: flex;
+            gap: 2rem;
+            .slider-btn {
+                cursor: pointer;
+                transition: all 0.25s ease;
+                text-align: center;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+                font-size: 4rem;
+                aspect-ratio: 1 / 1;
+                min-width: 4.4rem;
+                min-height: 4.4rem;
+                flex-basis: min-content;
+                svg {
+                    height: 4rem;
+                    width: auto;
+                    fill: var(--primary-white);
+                }
+            }
+        }
+        @media (max-width: 991px) {
+            flex-direction: column;
+            gap: 5rem;
+            align-items: flex-start;
+        }
+    }
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    .swiper{
+        overflow: visible;
+    }
+    .project-card {
+        position: relative;
+        width: 100%;
+        .project-card-img {
+            width: 100%;
+            overflow: hidden;
+            display: inline-block;
+            clip-path: var(--slope-clip-top-right-3);
+            [dir='rtl'] & {
+                clip-path: var(--slope-clip-top-left-3);
+        }
+            img {
+                width: 100%;
+                max-height: 100%;
+                transition: transform 0.4s ease-in-out;
+            }
+        }
+        .project-content {
+            padding: 4rem;
+            background-color: var(--primary-white);
+            clip-path: var(--slope-clip-bottom-right-3);
+            position: absolute;
+            bottom: calc(var(--slope-value-3)* -1);
+            width: 88%;
+            margin-left: 4rem;
+            margin-right: 4rem;
+            z-index: 1;
+            transition: transform 0.4s ease-in-out , padding-bottom 0.4s ease-in-out, background-color 0.4s ease-in-out;
+            [dir='rtl'] & {
+                clip-path: var(--slope-clip-bottom-left-3);
+        }
+            .project-title {
+                font-family: var(--jakarta-font-family);
+                font-weight: 600;
+                font-size: var(--medium-font-size);
+                line-height: 34px;
+                color: var(--secondary-color);
+                transition: color 0.4s ease-in-out;
+            }
+            p {
+                font-weight: 600;
+                font-size: var(--sm-title-font-size);
+                color: var(--primary-color);
+                line-height: 34px;
+                transition: color 0.4s ease-in-out;
+            }
+            .line{
+                width: 85%;
+                height: 1px;
+                background-color: rgba(239, 247, 246, 0.4);
+                margin: 2.5rem 0;
+                display: block;
+                position: absolute;
+                left: 4rem;
+                opacity: 0;
+                transform: translateY(50px); 
+                transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+            }
+            .read-more {
+                text-decoration: none;
+                font-family: var(--jakarta-font-family);
+                font-weight: 600;
+                font-size: var(--sm-font-size);
+                color: var(--primary-white);
+                line-height: 34px;
+                display: flex;
+                opacity: 0;
+                width: max-content;
+                padding-right: 1rem;
+                align-items: center;
+                position: absolute;
+                bottom: 0rem;
+                left: 4rem;
+                overflow: hidden; /* Ensures animation stays within bounds */
+                transition:
+                    transform 0.4s ease-in-out,
+                    opacity 0.4s ease-in-out, 
+                    bottom 0.4s ease-in-out;
+            }
+            .read-more svg {
+                height: 16px;
+                fill: var(--primary-white);
+                margin-left: 1rem;
+                transition:
+                    transform 0.4s ease,
+                    fill 0.4s ease; /* Smooth icon animation */
+                [dir='rtl'] & {
+                    rotate: 180deg;
+                }
+            }
+        }
+        &:hover {
+            img {
+                transform: scale(1.1); /* Adjust the scale factor as needed */
+            
+            }
+            .project-content {
+                background-color: var(--primary-color);
+                padding-bottom: 11rem;
+                .project-title {
+                    color: var(--primary-white);
+                }
+                p {
+                    color: var(--primary-white);
+                  
+                }
+                .line {
+                    display: block;
+                    opacity: 1;
+                    transform: translateY(0px);
+                    margin-bottom: 4rem;
+                }
+                .read-more {
+                    opacity: 1;
+                    transform: translateY(0px); /* Moves content up */
+                    bottom: 3rem;
+                    left: 4rem;
+                }
+            }
+        }
+    }
+    .swiper-button-disabled{
+        opacity: 0.4;
+    }
+}

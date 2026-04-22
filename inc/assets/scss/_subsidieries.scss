@@ -1,0 +1,121 @@
+// ==========================================
+// Table of Contents
+// ==========================================
+// 1. Subsidieries Section
+// ==========================================
+
+.subsidieries-section{
+    padding: 15rem 0 20rem;
+    @media (max-width:991px) {
+        padding: 10rem 0 15rem;
+    }
+    @media (max-width:767px) {
+        padding: 5rem 0 15rem;
+    }
+    .sub-heading {
+        text-align: center;
+    }
+    .main-heading {
+        text-align: center;
+        max-width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5rem;
+    }
+    .services-card-wrapper{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        .service-card{
+            background-color: var( --secondary-button-bg);
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 4rem;
+            align-items: center;
+            clip-path: var(--slope-clip-top-right-3);
+            padding: 5rem;
+            @media (max-width:991px) {
+                grid-template-columns: 1fr;
+            }
+            [dir='rtl'] & {
+                clip-path: var(--slope-clip-top-left-3);
+            }
+            .service-logo-block{
+                .logo-block{
+                    height: 190px;
+                    width: 100%;
+                    min-width: 271px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 2px solid var(--border-color);
+                }
+                .btn {
+                    width: 100%;
+                    margin-top: 1rem;
+                    .text-two {
+                        transform: translate(-50%, 300%);
+                    }
+                    &:hover {
+                        .text-two {
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                    &.primary {
+                        background-color: var(--primary-color);
+
+                        &::before {
+                            background: var(--secondary-color);
+                        }
+
+                        .text-one {
+                            color: var(--primary-white);
+                            svg {
+                                fill: var(--primary-white);
+                            }
+                        }
+
+                        .text-two {
+                            color: var(--primary-white);
+                            svg {
+                                fill: var(--primary-white);
+                            }
+                        }
+                    }
+                }
+            }
+            .service-card-content{
+                .industry-list-wrapper{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 5rem;
+                    margin-top: 2rem;
+                    @media (max-width:767px) {
+                        grid-template-columns: 1fr;
+                        margin-top: 5rem;
+                    }
+                    .industry-list {
+                        list-style: none;
+                        .industry-item {
+                            margin-bottom: 5px;
+                            align-items: center;
+                            display: grid;
+                            grid-template-columns: auto 1fr;
+                            gap: 1rem;
+                            .icon {
+                                min-height: 2rem;
+                                fill: var(--primary-color);
+                                [dir='rtl'] & {
+                                    rotate: 180deg;
+                                }
+                            }
+                          
+                        }
+                    }
+                }
+
+            }
+
+        }
+    }
+}

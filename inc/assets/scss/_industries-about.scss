@@ -1,0 +1,199 @@
+// ==========================================
+// Table of Contents
+// ==========================================
+// 1. Industries Section
+//    1.1 Headings
+//    1.2 Image Section (Main Image, Video, Modal, Logo)
+//    1.3 Stats Grid
+// 2. Industries Image Section
+// 3. Industries Video Section
+// ==========================================
+
+.industries-section {
+    padding: 15rem 0;
+    @media (max-width: 991px) {
+        padding: 10rem 0;
+    }
+    @media (max-width: 767px) {
+        padding: 5rem 0;
+    }
+    .stat-heading{
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .sub-heading {
+        text-align: center;
+    }
+    .main-heading {
+        text-align: center;
+        max-width: 83%;
+        margin: 0 auto 5rem;
+        @media (max-width: 767px) {
+            max-width: 100%;
+            margin: 0 auto 3rem;
+        }
+    }
+    .image-section {
+        position: relative;
+        .video-block{
+            cursor: pointer;
+        }
+        .main-image {
+            width: 100%;
+            max-height: 658px;
+            object-fit: cover;
+            clip-path: var( --slope-clip-top-right-5);
+            [dir='rtl'] & {
+                clip-path: var(--slope-clip-top-left-5);
+            }
+        }
+        .video-icon-block{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            .icon-play {
+                width: 116px;
+                height: 116px;
+                fill: var(--primary-color);
+                background: var(--primary-white);
+                border-radius: 50%;
+                padding: 18px;
+                @media (max-width: 991px) {
+                    height: 82px;
+                    width: 82px;
+                }
+                @media (max-width: 767px) {
+                    height: 62px;
+                    width: 62px;
+                    padding: 8px;
+                }
+            }
+        }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.733); /* Black background with opacity */
+        }
+
+        .modal-content {
+            // position: relative;
+            margin: 15% auto;
+            padding: 30px;
+            width: 80%;
+            max-width: 700px;
+     
+            iframe {
+                width: 100%;
+                border: none;
+            }
+        }
+
+        .video-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            height: 30px;
+            width: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            fill: var(--primary-white);
+            // border-radius: 50%;
+        }
+        .logo-block {
+            width: 149px;
+            height: 149px;
+            background-color: var(--primary-color);
+            clip-path: var( --slope-clip-bottom-left-3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 6rem;
+            margin-top: -12rem;
+            [dir='rtl'] & {
+                clip-path: var(--slope-clip-bottom-right-3);
+           
+            }
+            @media (max-width: 991px) {
+                height: 120px;
+                width: 120px;
+              
+            }
+            @media (max-width: 767px) {
+                height: 80px;
+                width: 80px;
+                margin-left: 3rem;
+                margin-top: -9.2rem;
+                clip-path: var(--slope-clip-bottom-left-base);
+                [dir='rtl'] & {
+                    clip-path: var(--slope-clip-bottom-right-base);
+               
+                }
+            }
+            .logo-img {
+                height: auto;
+                max-width: 100%;
+                object-fit: cover;
+                @media (max-width: 991px) {
+                    max-width: 40%;
+                }
+                @media (max-width: 767px) {
+                    max-width: 30%;
+                }
+            }
+        }
+    }
+    .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 7rem;
+        margin-top: 3rem;
+        @media (max-width: 991px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: 767px) {
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+        }
+        .stat-item {
+            h2 {
+                font-family: var(--jakarta-font-family);
+                font-weight: 400;
+                font-size: var(--title-lg-font-size);
+                color: var(--secondary-color);
+                text-align: left;
+            }
+            .line {
+                background-color: var(--primary-color);
+                width: 100%;
+                height: 2px;
+                margin: 2rem 0;
+            }
+            p {
+                color: var(--primary-color);
+            }
+        }
+    }
+}
+.industries-img-section{
+   padding: 0; 
+   margin-top: calc( var(--slope-value-5) * -1);
+}
+.industries-video-section{
+   padding: 0; 
+   padding-bottom: 15rem;
+   margin-top: calc( var(--slope-value-5) * -1);
+   @media (max-width:991px) {
+    padding-bottom: 10rem;
+   }
+   @media (max-width:767px) {
+    padding-bottom: 5rem;
+   }
+}

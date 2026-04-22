@@ -1,0 +1,178 @@
+// ==================
+// Table of Contents:
+// =================
+// 1. CSS Variables (Root)
+// 2. Base Button Styles (.btn)
+// 3. Primary Button Styles (.primary)
+// 4. Secondary Button Styles (.secondary)
+// 5. Bordered Button Styles (.bordered)
+// 6. Centered Button Utility (.centered-btn)
+// ====================
+:root {
+
+    --primary-background-color: var(--primary-color);
+    --primary-text-color: var(--primary-btn-text-color);
+
+    --primary-background-hover-color: var(--primary-button-hover-bg);
+    --primary-text-hover-color: var(--primary-color);
+
+    --secondary-background-color: var(--secondary-button-bg);
+    --secondary-text-color: var(--secondary-btn-text-color);
+
+    --secondary-background-hover-color: var(--primary-color);
+    --secondary-text-hover-color: var(--primary-white);
+} 
+/* BUTTONS */
+.btn,
+.btn:link,
+.btn:visited {
+    position: relative;
+    display: inline-block;
+    font-family: var(--jakarta-font-family);
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 2.5rem 4rem;
+    letter-spacing: 2px;
+    clip-path: var(--slope-clip-top-right-base);
+    text-decoration: none;
+    border: none;
+    transform: translateZ(0);
+
+    [dir='rtl'] & {
+        clip-path: var(--slope-clip-top-left-base);
+    }
+
+    svg {
+        height: 12px;
+        width: auto;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &::before {
+        content: '';
+
+        position: absolute;
+        width: 200%;
+        height: 200%;
+
+        top: -200%;
+        left: 50%;
+
+        transform: translateX(-50%);
+        transition-duration: 800ms;
+
+        border-radius: 50%;
+
+        z-index: 1;
+    }
+
+    .text-one {
+        transition: all 0.3s ease;
+        z-index: 2;
+        font-size: var(--btn-font-size);
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .text-two {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 300%);
+        font-size: var(--btn-font-size);
+        font-weight: 800;
+        z-index: 2;
+        transition: all 0.5s ease;
+    }
+
+    &:hover {
+        &::before {
+            top: 0;
+            top: -40%;
+        }
+
+        .text-one {
+            transform: translateY(-150%);
+        }
+
+        .text-two {
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.primary {
+    background-color: var(--primary-background-color);
+
+    &::before {
+        background: var(--primary-background-hover-color);
+    }
+    .text-one {
+        color: var(--primary-text-color);
+        svg {
+            fill: var(--primary-text-color);
+        }
+    }
+
+    .text-two {
+        color: var(--primary-text-hover-color);
+        svg {
+            fill: var(--primary-text-hover-color);
+        }
+    }
+}
+
+.secondary {
+    background-color: var(--secondary-background-color);
+    box-shadow: 1px 1.732px 4px 0px var(--transparent-secondary-color);
+    &::before {
+        background: var(--secondary-background-hover-color);
+    }
+
+    .text-one {
+        color: var(--secondary-text-color);
+        svg {
+            fill: var(--secondary-text-color);
+        }
+    }
+
+    .text-two {
+        color: var(--secondary-text-hover-color);
+        svg {
+            fill: var(--secondary-text-hover-color);
+        }
+    }
+}
+
+.bordered {
+    background-color: transparent;
+    outline: 1px solid var(--cs-color-input-border);
+
+    &::before {
+        background: var(--primary-background-hover-color);
+    }
+
+    .text-one {
+        color: var(--cs-color-input-border);
+    }
+
+    .text-two {
+        color: var(--primary-text-hover-color);
+    }
+
+    &:hover {
+        outline-color: var(--primary-background-hover-color);
+    }
+}
+.centered-btn {
+    display: flex;
+}

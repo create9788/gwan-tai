@@ -1,0 +1,104 @@
+// ==========================================
+// Table of Contents
+// ==========================================
+// 1. Consultation Section
+// 2. Demo Consultation Section
+// 3. Achievements Section
+// ==========================================
+
+.consultation-section {
+    padding: 15rem 0 25rem;
+    @media (max-width: 991px) {
+        padding: 10rem 0 15rem;
+    }
+    @media (max-width: 767px) {
+        padding: 5rem 0 14rem;
+    }
+    .headings {
+        text-align: center;
+        .main-heading {
+            max-width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            @media (max-width: 1200px) {
+                max-width: 70%;
+            }
+            @media (max-width: 767px) {
+                max-width: 100%;
+            }
+        }
+    }
+    .buttons-block {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+.demo-consultation-section{
+    padding: 10rem 0 15rem;
+    @media (max-width: 991px) {
+        padding: 10rem 0 10rem;
+    }
+    @media (max-width: 767px) {
+        padding: 5rem 0 5rem;
+    }
+    .primary::before {
+        background: var(--bg-light);
+    }
+    .secondary{
+        background-color: var(--bg-light);
+    }
+    .btn .text-two, .btn:link .text-two, .btn:visited .text-two{
+        transform: translate(-50%, 300%);
+    }
+    .btn:hover .text-two, .btn:link:hover .text-two, .btn:visited:hover .text-two {
+        transform: translate(-50%, -50%);
+    }
+}
+.achievements-section{    
+.achievement-cards-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 3rem;
+    @media (max-width:1200px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media (max-width:991px) {
+        grid-template-columns:1fr 1fr;
+    }
+    @media (max-width:767px) {
+        grid-template-columns: 1fr;
+    }
+}    
+.achievement-card{
+    padding: 4rem;
+    background-color: var(--bg-light);
+    clip-path: var(--slope-clip-top-right-3);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8rem;
+    [dir='rtl'] & {
+        clip-path: var(--slope-clip-top-left-3);
+    }
+    .icon {
+        height: 5rem;
+        fill: var(--primary-color);
+    }
+    .title{
+        font-family: var(--jakarta-font-family);
+        font-size: var(  --paragraph-font-size);
+        color: var(--secondary-color);
+        font-weight: 700;
+        line-height: 28px;
+    }
+}
+}
+.body-padding{
+    padding: 4rem ;
+    @media (max-width:991px) {
+        padding: 2rem;
+    }
+    @media (max-width:767px) {
+        padding: 1.4rem;
+    }
+}

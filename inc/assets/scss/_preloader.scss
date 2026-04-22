@@ -1,0 +1,189 @@
+// ==========================================
+// Table of Contents
+// ==========================================
+// 1. Preloader
+//    1.1 Preloader Container
+//    1.2 Preloader Icon
+//    1.3 Preloader Icon Container
+//    1.4 Animated Preloader
+//    1.5 Keyframes (preloader-inside-white, preloader-inside-red, rotate90, rotate180, rotate270, rotate360)
+// ==========================================
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 200vw;
+    height: 200vh;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: var(--page-bg-color);
+    z-index: 999999999
+  }
+  
+  @media(max-width: 991px) {
+    .preloader {
+        width:100vh;
+        height: 100vh
+    }
+  }
+  
+  .preloader-icon {
+    width: 100vw;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+  }
+  
+  .preloader .preloader-icon-container {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    --icon-color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  .preloader .preloader-icon-container .animated-preloader {
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--primary-color);
+    clip-path: var(--slope-clip-top-right-base);
+    // border-radius: 50%
+  }
+  
+  .preloader .preloader-icon-container .animated-preloader:after {
+    content: "";
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    // border-radius: 50%;
+    clip-path: var(--slope-clip-top-right-base);
+    background: var(--page-bg-color);
+    -webkit-animation: preloader-inside-white 1s ease-in-out infinite;
+    animation: preloader-inside-white 1s ease-in-out infinite
+  }
+  
+  .preloader .preloader-icon-container .animated-preloader:before {
+    content: "";
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    // border-radius: 50%;
+    clip-path: var(--slope-clip-top-right-base);
+    background: var(--primary-color);
+    -webkit-animation: preloader-inside-red 1s ease-in-out infinite;
+    animation: preloader-inside-red 1s ease-in-out infinite
+  }
+  
+  @media(max-width: 991px) {
+    .preloader .preloader-icon-container {
+        width:50px;
+        height: 50px
+    }
+  }
+  
+  @-webkit-keyframes preloader-inside-white {
+    0% {
+        -webkit-transform: scale(0, 0);
+        transform: scale(0, 0)
+    }
+  
+    100% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1)
+    }
+  }
+  
+  @keyframes preloader-inside-white {
+    0% {
+        -webkit-transform: scale(0, 0);
+        transform: scale(0, 0)
+    }
+  
+    100% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1)
+    }
+  }
+  
+  @-webkit-keyframes preloader-inside-red {
+    0% {
+        -webkit-transform: scale(0, 0);
+        transform: scale(0, 0)
+    }
+  
+    30% {
+        -webkit-transform: scale(0, 0);
+        transform: scale(0, 0)
+    }
+  
+    100% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1)
+    }
+  }
+  
+  @keyframes preloader-inside-red {
+    0% {
+        -webkit-transform: scale(0, 0);
+        transform: scale(0, 0)
+    }
+  
+    30% {
+        -webkit-transform: scale(0, 0);
+        transform: scale(0, 0)
+    }
+  
+    100% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1)
+    }
+  }
+
+  @keyframes rotate90 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(90deg); }
+}
+
+@keyframes rotate180 {
+    0% { transform: rotate(90deg); }
+    100% { transform: rotate(180deg); }
+}
+
+@keyframes rotate270 {
+    0% { transform: rotate(180deg); }
+    100% { transform: rotate(270deg); }
+}
+
+@keyframes rotate360 {
+    0% { transform: rotate(270deg); }
+    100% { transform: rotate(360deg); }
+}

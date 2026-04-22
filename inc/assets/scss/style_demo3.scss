@@ -1,0 +1,360 @@
+// ==========================================
+// Table of Contents
+// ==========================================
+// 1. Font Imports
+// 2. Variables
+// 3. Base Styles
+// 4. Layout
+// 5. Components
+// 6. Utilities
+// 7. Animations
+// 8. Imports
+// ==========================================
+
+
+// 1. Font Imports
+// ------------------------------------------
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100..900&display=swap');
+
+// 2. Variables
+// ------------------------------------------
+:root {
+    /* Font sizes */
+    --outline-heading-font-size: 18rem;
+    --heading-font-size: 7rem;
+    --title-lg-font-size: 6rem;
+    --title-md-font-size: 5rem;
+    --medium-font-size: 3rem;
+    --paragraph-font-size: 2rem;
+    --feature-font-size: 2.4rem;
+    --title-font-size: 2.8rem;
+    --sm-title-font-size: 1.8rem;
+    --sm-font-size: 1.6rem;
+    --sub-heading-font-size: 1.4rem;
+    --btn-font-size: 1.2rem;
+    --main-heading-font-size: 7rem;
+    --heading-letter-spacing: -1.4px;
+    --heading-text-transform: inherit;
+    --heading-line-height: 1.2;
+    /* Colors */
+    --page-bg-color: #fff7f7;
+    --primary-color: #e30613;
+    --light-primary-color: #da000f;
+    --secondary-color: #191919;
+    --main-secondary-color: #5d0207;
+    --secondary-dark-color: #5d0207;
+    --paragraph-color: #474747;
+    --paragraph-light-color: #a4b5ad;
+    --paragraph-md-color: #dddddd;
+    --primary-white: #ffffff;
+    --bg-light: #fff7f7; /* color */
+    --bg-md-light: #ffe5e0;
+    --moving-text-color: #ffb3a6;
+    --hero-bg-color: #5d0207;
+    --semi-black-color: #191919;
+    --grey-color: #474747;
+    --border-color:#ecf4ef;
+    --border-color-1: #e7ded6;
+    --transparent-primary-color: rgba(227, 6, 19, 0.6);
+    --transparent-secondary-color: rgba(16, 37, 33, 0.04);
+    --bg-semi-black-transparent: rgba(25, 25, 25, 0.6);
+    --bg-black-transparent: rgba(0, 0, 0, 0.9);
+    --primary-black: rgb(0, 0, 0);
+    --primary-button-hover-bg:#ffffff;
+    --secondary-button-bg:#ffffff;
+    --secondary-btn-text-color:#e30613; 
+    --primary-btn-text-color:#ffffff; 
+    /* Font-family */
+    --jakarta-font-family: 'Plus Jakarta Sans', sans-serif;
+    --spartan-font-family: 'Spartan', sans-serif;
+
+    /* Clip-path for sections */
+    --slope-base-value: 1rem;
+    --slope-value-3: calc(var(--slope-base-value) * 3);
+    --slope-value-5: calc(var(--slope-base-value) * 5);
+
+    --slope-clip-top-right-base: polygon(
+        calc(100% - var(--slope-base-value)) 0,
+        100% var(--slope-base-value),
+        100% 100%,
+        0 100%,
+        0 0
+    );
+    --slope-clip-top-left-base: polygon(
+        var(--slope-base-value) 0,
+        100% 0,
+        100% 100%,
+        0 100%,
+        0 var(--slope-base-value)
+    );
+    --slope-clip-bottom-left-base: polygon(
+        100% 0,
+        100% 100%,
+        var(--slope-base-value) 100%,
+        0 calc(100% - var(--slope-base-value)),
+        0 0
+    );
+    --slope-clip-bottom-right-base: polygon(
+        100% 0,
+        100% calc(100% - var(--slope-base-value)),
+        calc(100% - var(--slope-base-value)) 100%,
+        0 100%,
+        0 0
+    );
+
+    --slope-clip-top-right-3: polygon(
+        calc(100% - var(--slope-value-3)) 0,
+        100% var(--slope-value-3),
+        100% 100%,
+        0 100%,
+        0 0
+    );
+    --slope-clip-top-left-3: polygon(
+        var(--slope-value-3) 0,
+        100% 0,
+        100% 100%,
+        0 100%,
+        0 var(--slope-value-3)
+    );
+    --slope-clip-bottom-left-3: polygon(
+        100% 0,
+        100% 100%,
+        var(--slope-value-3) 100%,
+        0 calc(100% - var(--slope-value-3)),
+        0 0
+    );
+    --slope-clip-bottom-right-3: polygon(
+        100% 0,
+        100% calc(100% - var(--slope-value-3)),
+        calc(100% - var(--slope-value-3)) 100%,
+        0 100%,
+        0 0
+    );
+
+    --slope-clip-top-right-5: polygon(
+        calc(100% - var(--slope-value-5)) 0,
+        100% var(--slope-value-5),
+        100% 100%,
+        0 100%,
+        0 0
+    );
+    --slope-clip-top-left-5: polygon(
+        var(--slope-value-5) 0,
+        100% 0,
+        100% 100%,
+        0 100%,
+        0 var(--slope-value-5)
+    );
+    --slope-clip-bottom-left-5: polygon(
+        100% 0,
+        100% 100%,
+        var(--slope-value-5) 100%,
+        0 calc(100% - var(--slope-value-5)),
+        0 0
+    );
+    --slope-clip-bottom-right-5: polygon(
+        100% 0,
+        100% calc(100% - var(--slope-value-5)),
+        calc(100% - var(--slope-value-5)) 100%,
+        0 100%,
+        0 0
+    );
+}
+
+// 3. Base Styles
+// ------------------------------------------
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    @media (max-width: 1200px) {
+        font-size: 56.25%;
+    }
+    @media (max-width: 991px) {
+        font-size: 50%;
+    }
+}
+body {
+    line-height: 1;
+    overflow-x: hidden;
+    background-color: var(--page-bg-color);
+    scroll-behavior: smooth;
+}
+
+// 4. Layout
+// ------------------------------------------
+.container {
+    max-width: 1375px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    @media (max-width: 1366px) {
+        padding: 0 2.5rem;
+    }
+}
+.secondary-container{
+    max-width: 1845px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    @media (max-width: 1366px) {
+        padding: 0 2.5rem;
+    }
+}
+
+// 5. Components
+// ------------------------------------------
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--page-bg-color);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: var(--primary-color);
+}
+/*--------------------
+ Back to Top Button
+---------------------*/
+.scrollToTopBtn {
+    background-color: var(--primary-color);
+    border: none;
+    clip-path: var(--slope-clip-top-right-base);
+    fill: var(--primary-white);
+    cursor: pointer;
+    height: 48px;
+    width: 48px;
+    /* place it at the bottom right corner */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    /* keep it on top of everything else */
+    z-index: 100;
+    /* hide with opacity */
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.5s ease;
+    svg {
+        height: 30px;
+        width: 30px;
+    }
+    @media (max-width: 991px) {
+        height: 38px;
+        width: 38px;
+        bottom: 20px;
+        right: 20px;
+        svg {
+            height: 20px;
+            width: 20px;
+        }
+    }
+    [dir='rtl'] & {
+        clip-path: var(--slope-clip-top-left-base);
+    }
+}
+
+.showBtn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+// 6. Utilities
+// ------------------------------------------
+@media (max-width: 991px) {
+    .mobile-hidden {
+        display: none;
+    }
+}
+
+// 7. Animations
+// ------------------------------------------
+// Fade-in-up-keyframe
+@keyframes customFadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 50px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+.custom-fadeInUp {
+    animation-name: customFadeInUp;
+}
+// =====
+// Fade-in-Left-keyframe
+@keyframes fadeInLeftSmall {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.fadeInLeftSmall {
+    animation: fadeInLeftSmall 1s ease forwards;
+}
+// =====
+// Fade-in-Right-keyframe
+@keyframes fadeInRightSmall {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.fadeInRightSmall {
+    animation: fadeInRightSmall 1s ease forwards;
+}
+
+// 8. Imports
+// ------------------------------------------
+//import all section scss files
+@import 'about-us-1.scss';
+@import 'button.scss';
+@import 'heading.scss';
+@import 'blog.scss';
+@import 'footer.scss';
+@import 'services.scss';
+@import 'areas-serve.scss';
+@import 'commitment.scss';
+@import 'about-us-3.scss';
+@import 'innovative-solution.scss';
+@import 'testimonials.scss';
+@import 'about-us-2.scss';
+@import 'team-meet.scss';
+@import 'industries-about.scss';
+@import 'header.scss';
+@import 'hamburger.scss';
+@import 'hero-1.scss';
+@import 'hero-2.scss';
+@import 'image-gallery.scss';
+@import 'consult.scss';
+@import 'faqs.scss';
+@import 'page-header.scss';
+@import 'subsidieries.scss';
+@import 'customer.scss';
+@import 'project.scss';
+@import 'why-choose-us.scss';
+@import 'preloader.scss';
+@import 'pricing-plan';
+@import 'intro.scss';
+@import 'contact.scss';

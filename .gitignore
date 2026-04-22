@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.claude/
+
+# Node
+node_modules/
+package-lock.json
+
+# Demo templates (not part of final site)
+demo_2/
+demo_5/
+
+# PHP (not used in static site)
+index.php
