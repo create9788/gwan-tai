@@ -16,68 +16,135 @@
     <link rel="stylesheet" href="inc/assets/dist/animate.min.css" />
 
     <style>
-        /* Process Steps Custom Styles */
+        /* ====== Process Steps ====== */
         .process-section {
             padding: 80px 0;
+            background: #f4f6fb;
         }
         .process-intro {
             text-align: center;
             max-width: 720px;
-            margin: 0 auto 60px;
+            margin: 0 auto 64px;
         }
         .process-steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            position: relative;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
         .process-step {
+            background: #fff;
+            border-radius: 0;
+            padding: 32px 24px 28px;
             display: flex;
-            gap: 24px;
-            align-items: flex-start;
+            flex-direction: column;
+            box-shadow: 0 2px 20px rgba(26, 60, 110, 0.07);
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--primary-color, #1a3c6e);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .step-number {
+        .process-step:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(26, 60, 110, 0.14);
+        }
+        .step-bg-num {
+            position: absolute;
+            bottom: -14px;
+            right: 14px;
+            font-size: 6rem;
+            font-weight: 900;
+            line-height: 1;
+            color: var(--primary-color, #1a3c6e);
+            opacity: 0.05;
+            pointer-events: none;
+            user-select: none;
+        }
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+        .step-num {
             flex-shrink: 0;
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
+            width: 36px;
+            height: 36px;
             background: var(--primary-color, #1a3c6e);
+            border-radius: 0;
             color: #fff;
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 0.03em;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            line-height: 1;
         }
-        .step-content h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: var(--heading-color, #1a1a2e);
-        }
-        .step-content p {
-            color: var(--text-color, #666);
-            line-height: 1.8;
-            margin: 0;
-        }
-        .process-divider {
+        .step-icon-box {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: rgba(26, 60, 110, 0.08);
+            border-radius: 0;
             display: flex;
             align-items: center;
-            gap: 16px;
-            margin: 48px 0;
+            justify-content: center;
         }
-        .process-divider::before,
-        .process-divider::after {
-            content: '';
+        .step-icon-box svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--primary-color, #1a3c6e);
+        }
+        .step-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin: 0 0 12px;
+            color: var(--heading-color, #1a1a2e);
+            line-height: 1.35;
+        }
+        .step-desc {
+            color: var(--text-color, #666);
+            line-height: 1.85;
+            font-size: 2rem;
+            margin: 0;
             flex: 1;
-            height: 1px;
-            background: #e0e0e0;
         }
-        .process-divider span {
-            font-size: 0.875rem;
-            color: #999;
-            white-space: nowrap;
+        /* 桌機：每排末欄不加箭頭，其餘加右箭頭指示流向 */
+        @media (min-width: 992px) {
+            .process-step:not(:nth-child(3n))::after {
+                content: '';
+                position: absolute;
+                right: -13px;
+                top: 52px;
+                width: 0;
+                height: 0;
+                border-top: 8px solid transparent;
+                border-bottom: 8px solid transparent;
+                border-left: 11px solid rgba(26, 60, 110, 0.18);
+                z-index: 2;
+            }
+        }
+        /* 平板：2欄 */
+        @media (max-width: 991px) {
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+        /* 手機：1欄 */
+        @media (max-width: 575px) {
+            .process-section {
+                padding: 60px 0;
+            }
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .process-step {
+                padding: 28px 20px 24px;
+            }
+            .step-bg-num {
+                font-size: 4.5rem;
+            }
         }
     </style>
 </head>
@@ -106,7 +173,7 @@
             </div>
         </div>
         <div class="hero-img-overlay">
-            <img class="hero-slide-bg" src="inc/assets/images-2/hero-slide-img-1.png" alt="廣太塑膠">
+            <img class="hero-slide-bg" src="inc/assets/images-2/hero-slide-img-process.webp" alt="廣太塑膠">
         </div>
         <svg class="grid-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="107.306px" height="107.307px" viewBox="0 0 107.306 107.307" enable-background="new 0 0 107.306 107.307" xml:space="preserve">
             <g><circle fill="none" stroke-width="4" stroke-miterlimit="10" cx="12.551" cy="12.551" r="10.551"/><circle fill="none" stroke-width="4" stroke-miterlimit="10" cx="53.653" cy="12.551" r="10.551"/><circle fill="none" stroke-width="4" stroke-miterlimit="10" cx="94.755" cy="12.551" r="10.551"/></g>
@@ -128,51 +195,75 @@
             <div class="process-steps">
                 <!-- Step 1 -->
                 <div class="process-step wow animate__animated custom-fadeInUp" data-wow-delay="0s">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h3>需求討論</h3>
-                        <p>與客戶深入溝通產品規格、材質要求、預計數量及交期等需求，確認合作細節，提供初步報價與建議方案。</p>
+                    <div class="step-bg-num">01</div>
+                    <div class="step-header">
+                        <div class="step-num">01</div>
+                        <div class="step-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 448c141.4 0 256-93.1 256-208S397.4 32 256 32S0 125.1 0 240c0 45.1 17.7 86.8 47.7 120.9c-1.9 24.5-11.4 46.3-21.4 62.9c-5.5 9.2-11.1 16.6-15.2 21.6c-2.1 2.5-3.7 4.4-4.9 5.7c-.6 .6-1 1.1-1.3 1.4l-.3 .3c-4.6 4.6-5.9 11.4-3.4 17.4c2.5 6 8.3 9.9 14.8 9.9c28.7 0 57.6-8.9 81.6-19.3c22.9-10 42.4-21.9 54.3-30.6c31.8 11.5 67 17.9 104.1 17.9zM128 208a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm128 0a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm96 32a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+                        </div>
                     </div>
+                    <h3 class="step-title">需求討論</h3>
+                    <p class="step-desc">與客戶深入溝通產品規格、材質要求、預計數量及交期等需求，確認合作細節，提供初步報價與建議方案。</p>
                 </div>
                 <!-- Step 2 -->
-                <div class="process-step wow animate__animated custom-fadeInUp" data-wow-delay="0.15s">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <h3>模具開發</h3>
-                        <p>依據客戶圖面或樣品進行模具設計，利用CAD/CAM軟體完成3D模型與加工程式，交由模具部門進行精密加工製造。</p>
+                <div class="process-step wow animate__animated custom-fadeInUp" data-wow-delay="0.1s">
+                    <div class="step-bg-num">02</div>
+                    <div class="step-header">
+                        <div class="step-num">02</div>
+                        <div class="step-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 320c88.4 0 160-71.6 160-160c0-15.3-2.2-30.1-6.2-44.2c-3.1-10.8-16.4-13.2-24.3-5.3l-76.8 76.8c-3 3-7.1 4.7-11.3 4.7H336c-8.8 0-16-7.2-16-16V118.3c0-4.2 1.7-8.3 4.7-11.3l76.8-76.8c7.9-7.9 5.4-21.2-5.3-24.3C382.1 2.2 367.3 0 352 0C263.6 0 192 71.6 192 160c0 19.1 3.4 37.5 9.5 54.5L19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L297.5 310.5c17 6.2 35.4 9.5 54.5 9.5z"/></svg>
+                        </div>
                     </div>
+                    <h3 class="step-title">模具開發</h3>
+                    <p class="step-desc">依據客戶圖面或樣品進行模具設計，利用CAD/CAM軟體完成3D模型與加工程式，交由模具部門進行精密加工製造。</p>
                 </div>
                 <!-- Step 3 -->
-                <div class="process-step wow animate__animated custom-fadeInUp" data-wow-delay="0.3s">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <h3>試模驗證</h3>
-                        <p>模具完成後進行首次試射，針對尺寸精度、外觀品質及成型條件進行全面驗證，依據樣品確認結果提供試模報告並進行必要修模。</p>
+                <div class="process-step wow animate__animated custom-fadeInUp" data-wow-delay="0.2s">
+                    <div class="step-bg-num">03</div>
+                    <div class="step-header">
+                        <div class="step-num">03</div>
+                        <div class="step-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M288 0H160 128C110.3 0 96 14.3 96 32s14.3 32 32 32l0 132.8L51.5 354.4C36.5 378.5 32 397.9 32 412.8C32 465.2 74.4 512 128 512H320c53.6 0 96-46.8 96-99.2c0-14.9-4.5-34.3-19.5-58.4L320 196.8 320 64c17.7 0 32-14.3 32-32s-14.3-32-32-32H288zM192 196.8l0-132.8 64 0 0 132.8 0 15.2 7.4 13.5 100 182.7c6.2 11.3 9.1 21.3 9.5 30.1H75c.4-8.8 3.3-18.8 9.5-30.1L184.6 225.5l7.4-13.5 0-15.2z"/></svg>
+                        </div>
                     </div>
+                    <h3 class="step-title">試模驗證</h3>
+                    <p class="step-desc">模具完成後進行首次試射，針對尺寸精度、外觀品質及成型條件進行全面驗證，依據樣品確認結果提供試模報告並進行必要修模。</p>
                 </div>
                 <!-- Step 4 -->
-                <div class="process-step wow animate__animated custom-fadeInUp" data-wow-delay="0.45s">
-                    <div class="step-number">04</div>
-                    <div class="step-content">
-                        <h3>量產製造</h3>
-                        <p>客戶確認樣品後正式進入量產階段，依訂單數量排程生產，全程由生產管理系統追蹤進度，確保如期完成。</p>
+                <div class="process-step wow animate__animated custom-fadeInUp" data-wow-delay="0.3s">
+                    <div class="step-bg-num">04</div>
+                    <div class="step-header">
+                        <div class="step-num">04</div>
+                        <div class="step-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M64 32C46.3 32 32 46.3 32 64l0 384c0 17.7 14.3 32 32 32l160 0 0-112c0-26.5 21.5-48 48-48s48 21.5 48 48l0 112 160 0c17.7 0 32-14.3 32-32l0-384c0-17.7-14.3-32-32-32L64 32zM96 96l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16zm208 16c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32zM96 208l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16zm208 16c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32zM448 96l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16zm0 112l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16z"/></svg>
+                        </div>
                     </div>
+                    <h3 class="step-title">量產製造</h3>
+                    <p class="step-desc">客戶確認樣品後正式進入量產階段，依訂單數量排程生產，全程由生產管理系統追蹤進度，確保如期完成。</p>
                 </div>
                 <!-- Step 5 -->
-                <div class="process-step wow animate__animated custom-fadeInUp" data-wow-delay="0.6s">
-                    <div class="step-number">05</div>
-                    <div class="step-content">
-                        <h3>品質檢驗</h3>
-                        <p>成品依據客戶規格進行全數或抽樣檢驗，包含外觀檢查、尺寸量測及功能測試，確保每批出貨品質符合標準。</p>
+                <div class="process-step wow animate__animated custom-fadeInUp" data-wow-delay="0.4s">
+                    <div class="step-bg-num">05</div>
+                    <div class="step-header">
+                        <div class="step-num">05</div>
+                        <div class="step-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+                        </div>
                     </div>
+                    <h3 class="step-title">品質檢驗</h3>
+                    <p class="step-desc">成品依據客戶規格進行全數或抽樣檢驗，包含外觀檢查、尺寸量測及功能測試，確保每批出貨品質符合標準。</p>
                 </div>
                 <!-- Step 6 -->
-                <div class="process-step wow animate__animated custom-fadeInUp" data-wow-delay="0.75s">
-                    <div class="step-number">06</div>
-                    <div class="step-content">
-                        <h3>出貨交付</h3>
-                        <p>成品完成品檢後進行包裝作業，依客戶指定方式出貨，提供出貨報告與品質文件，並持續追蹤客戶滿意度與後續需求。</p>
+                <div class="process-step wow animate__animated custom-fadeInUp" data-wow-delay="0.5s">
+                    <div class="step-bg-num">06</div>
+                    <div class="step-header">
+                        <div class="step-num">06</div>
+                        <div class="step-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M48 0C21.5 0 0 21.5 0 48L0 368c0 26.5 21.5 48 48 48l16 0c0 53 43 96 96 96s96-43 96-96l128 0c0 53 43 96 96 96s96-43 96-96l32 0c17.7 0 32-14.3 32-32l0-96 0-32 0-18.7c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7L416 96l0-48c0-26.5-21.5-48-48-48L48 0zM416 160l50.7 0L544 237.3l0 18.7-128 0 0-96zm-208 96a48 48 0 1 1 0 96 48 48 0 1 1 0-96zm272 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0z"/></svg>
+                        </div>
                     </div>
+                    <h3 class="step-title">出貨交付</h3>
+                    <p class="step-desc">成品完成品檢後進行包裝作業，依客戶指定方式出貨，提供出貨報告與品質文件，並持續追蹤客戶滿意度與後續需求。</p>
                 </div>
             </div>
         </div>
@@ -180,7 +271,7 @@
     <!-- Process Section End -->
 
     <!-- About Commitment Section -->
-    <section class="goals-section" style="background: url(inc/assets/images-2/services-bg-img-1.png);">
+    <section class="goals-section" style="background: url(inc/assets/images/services-blue-bg.webp);">
         <div class="container">
             <div class="wow animate__animated custom-fadeInUp">
                 <h6 class="sub-heading">我們的承諾</h6>
@@ -231,7 +322,7 @@
                 <div class="content-block wow animate__animated custom-fadeInUp">
                     <h6 class="sub-heading">立即開始合作</h6>
                     <h2 class="main-heading">準備好與我們攜手打造您的產品了嗎？</h2>
-                    <p>歡迎聯絡廣太塑膠，我們的業務團隊將在一個工作日內與您回覆，提供專業建議與報價。</p>
+                    <p style="margin-bottom: 3rem;">歡迎聯絡廣太塑膠，我們的業務團隊將在一個工作日內與您回覆，提供專業建議與報價。</p>
                     <a href="contact.html" class="btn primary">
                         <span class="text-one">立即聯絡
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
