@@ -211,6 +211,17 @@
             grid-template-columns: 1fr;
             gap: 5rem;
         }
+        &.goals-wrapper-3col {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 4rem;
+            @media (max-width:1200px) {
+                grid-template-columns: 1fr 1fr;
+                gap: 5rem;
+            }
+            @media (max-width:991px) {
+                grid-template-columns: 1fr;
+            }
+        }
         .goal-block{
             .title{
                 font-family: var(--jakarta-font-family);

@@ -3790,7 +3790,7 @@ footer.footer-red::before {
     }
 }
 .about-us-3-main-wrapper .about-us-section .about-img-block {
-    background: url(../images/hero-slide-img-3.webp);
+    background: url(../images/about-us-img.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -5039,6 +5039,16 @@ footer.footer-red::before {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 14rem;
+}
+.goals-section .goals-wrapper.goals-wrapper-3col {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+}
+@media (max-width: 1200px) {
+    .goals-section .goals-wrapper.goals-wrapper-3col {
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+    }
 }
 @media (max-width: 991px) {
     .goals-section .goals-wrapper {
@@ -11196,6 +11206,11 @@ header.sticky-nav.sticky .consult-trigger .hamburger-icon.consult-btn {
         grid-template-columns: 1fr;
     }
 }
+.project-col-section .project-wrapper.grid-3col .project-card .project-img-block {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
 .project-col-section .project-wrapper.grid-4col {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
@@ -13787,4 +13802,206 @@ header.sticky-nav.sticky .consult-trigger .hamburger-icon.consult-btn {
     height: auto;
     width: 100%;
     fill: white;
+}
+.certification-section {
+  padding: 0 0 15rem;
+  background-color: var(--page-bg-color);
+}
+@media (max-width: 991px) {
+  .certification-section {
+    padding-bottom: 10rem;
+  }
+}
+@media (max-width: 767px) {
+  .certification-section {
+    padding-bottom: 5rem;
+  }
+}
+.certification-section .headings {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 6rem;
+}
+@media (max-width: 767px) {
+  .certification-section .headings {
+    margin-bottom: 4rem;
+  }
+}
+.certification-section .headings .section-desc {
+  margin-top: 2.4rem;
+  font-family: var(--jakarta-font-family);
+  font-size: var(--sm-font-size);
+  line-height: 1.8;
+  color: var(--paragraph-color);
+}
+.certification-section .cert-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 6rem;
+  padding: 3rem 4rem;
+  background-color: var(--primary-white);
+  box-shadow: 1px 1.732px 4px 0px var(--transparent-secondary-color);
+  clip-path: var(--slope-clip-top-right-3);
+}
+[dir=rtl] .certification-section .cert-meta {
+  clip-path: var(--slope-clip-top-left-3);
+}
+@media (max-width: 991px) {
+  .certification-section .cert-meta {
+    grid-template-columns: 1fr;
+    padding: 3rem;
+  }
+}
+@media (max-width: 767px) {
+  .certification-section .cert-meta {
+    margin-bottom: 4rem;
+  }
+}
+.certification-section .cert-meta .meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.certification-section .cert-meta .meta-item .label {
+  font-family: var(--jakarta-font-family);
+  font-size: var(--btn-font-size);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-color);
+}
+.certification-section .cert-meta .meta-item .value {
+  font-family: var(--jakarta-font-family);
+  font-size: var(--sm-font-size);
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--secondary-color);
+}
+.certification-section .cert-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .certification-section .cert-gallery {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
+}
+.certification-section .cert-gallery .cert-item {
+  background-color: var(--primary-white);
+  padding: 2rem;
+  box-shadow: 1px 1.732px 4px 0px var(--transparent-secondary-color);
+  clip-path: var(--slope-clip-top-right-3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+[dir=rtl] .certification-section .cert-gallery .cert-item {
+  clip-path: var(--slope-clip-top-left-3);
+}
+.certification-section .cert-gallery .cert-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(10, 53, 88, 0.08);
+}
+.certification-section .cert-gallery .cert-item .cert-image-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  text-align: center;
+}
+.certification-section .cert-gallery .cert-item .cert-image-trigger .cert-image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  padding: 1rem;
+  background-color: var(--page-bg-color);
+  border: 1px solid var(--border-color);
+}
+.certification-section .cert-gallery .cert-item .cert-image-trigger img {
+  max-width: 100%;
+  max-height: 220px;
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+.certification-section .cert-gallery .cert-item .cert-image-trigger .cert-zoom-hint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+  font-family: var(--jakarta-font-family);
+  font-size: var(--btn-font-size);
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.certification-section .cert-gallery .cert-item .cert-image-trigger .cert-zoom-hint svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: currentColor;
+}
+.certification-section .cert-gallery .cert-item .cert-caption {
+  margin-top: 1.6rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+.certification-section .cert-gallery .cert-item .cert-caption h4 {
+  font-family: var(--jakarta-font-family);
+  font-size: var(--sm-font-size);
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 0.8rem;
+}
+.certification-section .cert-gallery .cert-item .cert-caption p {
+  font-family: var(--jakarta-font-family);
+  font-size: var(--btn-font-size);
+  color: var(--paragraph-color);
+}
+.certification-section .cert-lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+.certification-section .cert-lightbox .cert-lightbox-inner {
+  position: relative;
+  max-width: min(900px, 92vw);
+  max-height: 92vh;
+}
+.certification-section .cert-lightbox .cert-lightbox-close {
+  position: absolute;
+  top: -4rem;
+  right: 0;
+  width: 3.2rem;
+  height: 3.2rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.certification-section .cert-lightbox .cert-lightbox-close svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--primary-white);
+}
+.certification-section .cert-lightbox .cert-lightbox-img {
+  display: block;
+  max-width: 100%;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 }
