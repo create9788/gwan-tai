@@ -2173,14 +2173,16 @@ footer .grid-icon {
     width: 4.6rem;
     height: 4.6rem;
     stroke: var(--primary-color);
-    bottom: 50px;
-    left: 50px;
-    z-index: 10;
+    bottom: 3rem;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
 }
 @media (max-width: 991px) {
     footer .grid-icon {
-        bottom: 20px;
-        left: 20px;
+        bottom: 2rem;
+        width: 3.6rem;
+        height: 3.6rem;
     }
 }
 footer::before {
@@ -6292,7 +6294,7 @@ header.construction-header .header-wrapper .icons-block .btn {
 }
 .navigation-menu.mobile li a {
     padding-right: 15px;
-    padding-left: 0;
+    padding-left: 15px;
 }
 .navigation-menu.mobile a {
     font-size: var(--item-font-size);
