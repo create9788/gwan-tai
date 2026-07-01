@@ -2173,14 +2173,15 @@ footer .grid-icon {
     width: 4.6rem;
     height: 4.6rem;
     stroke: var(--primary-color);
-    bottom: 3rem;
-    left: 0;
+    top: 23px;
+    left: 50px;
     z-index: 0;
     pointer-events: none;
 }
 @media (max-width: 991px) {
     footer .grid-icon {
-        bottom: 2rem;
+        top: 0;
+        left: 5px;
         width: 3.6rem;
         height: 3.6rem;
     }
